@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import SimpleComponent from './components/simpleComponent/SimpleComponent'
+
+import SharpCalculator from './sharpcalculator/SharpCalculator'
+
+let message = "ram's first react application"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SharpCalculator></SharpCalculator>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -8,7 +8,8 @@ class SharpCalculator extends Component{
         this.state = {
                 num:0,
                 result:0,
-                operation:''
+                operation:'',
+                clearvalue:false
         }
     }
 
@@ -16,7 +17,7 @@ class SharpCalculator extends Component{
     handleOperation=(operationtype)=>{
        this.setState({operation:operationtype});
        this.setState({result:this.state.num});
-       this.setState({num:0});
+       this.setState({clearvalue:true});
     }
 
 
@@ -55,6 +56,11 @@ class SharpCalculator extends Component{
 
 
     handleEvent=(value)=>{
+        if(this.state.clearvalue)
+        {
+            this.setState({num:0});
+            this.setState({clearvalue:false});
+        }
        var tempvalue = parseInt(this.state.num) * 10 + parseInt(value);
        this.setState({num:tempvalue});
     }
